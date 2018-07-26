@@ -1,0 +1,35 @@
+{
+  "name": "mtvplayer",
+  "version": "0.0.1",
+  "description": "mtvplayer for everyone",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint .",
+    "develop:html": "jade src/jade/main.jade --pretty --out build/ && mv build/main.html build/index.html",
+    "develop:js": "webpack src/js/main.js --output build/app.js -d --watch",
+    "release:html": "jade src/jade/main.jade --out build/ && mv build/main.html build/index.html",
+    "release:css": "cp src/css/main.css build/main.css",
+    "release:js": "webpack src/js/main.js --output build/app.js -p",
+    "release:all": "npm run release:html && npm run release:css && npm run release:js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhibirc/mtvplayer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhibirc/mtvplayer/issues"
+  },
+  "homepage": "https://github.com/zhibirc/mtvplayer#readme",
+  "devDependencies": {
+    "webpack": "^4.16.2",
+    "webpack-cli": "^3.1.0"
+  },
+  "dependencies": {
+    "mithril": "^1.1.6",
+    "pug": "^2.0.3",
+    "video.js": "^7.1.0"
+  }
+}
