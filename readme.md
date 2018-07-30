@@ -1,3 +1,3 @@
 # mtvplayer
 
-mtvplayer for everyone
+mtvplayer for everyone, for everything
