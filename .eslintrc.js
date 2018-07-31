@@ -7,9 +7,12 @@
 // public
 module.exports = {
     // base rules
-    extends: require.resolve('mag-eslint-config/.eslintrc.js'),
+    extends: require.resolve('spa-eslint-config/.eslintrc.js'),
 
-    globals: {
-        MODE_PORTAL: false
+    rules: {
+        'new-cap': 0,
+        'no-empty-function': 0,
+        'no-eval': 0,
+        'strict': 0
     }
 };

@@ -9,7 +9,10 @@
     },
     "main": "index.js",
     "scripts": {
-        "test": "eslint .",
+        "lint": "eslint .",
+        "ava:watch": "ava --verbose --watch",
+        "ava": "ava --verbose --tap | tap-diff",
+        "test": "npm run ava && npm run lint",
         "develop:html": "jade src/jade/main.jade --pretty --out build/ && mv build/main.html build/index.html",
         "develop:js": "webpack src/js/main.js --output build/app.js -d --watch",
         "release:html": "jade src/jade/main.jade --hierarchy --out build/ && mv build/main.html build/index.html",
@@ -22,6 +25,9 @@
         "url": "https://github.com/zhibirc/mtvplayer/issues"
     },
     "devDependencies": {
+        "ava": "^0.25.0",
+        "spa-eslint-config": "^1.0.0",
+        "tap-diff": "^0.1.1",
         "webpack": "^4.16.2",
         "webpack-cli": "^3.1.0"
     },
